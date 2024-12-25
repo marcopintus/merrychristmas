@@ -1,0 +1,112 @@
+/* General styles for the body */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ff0000; /* Set background to red */
+    color: white;
+    overflow: hidden; /* Prevent scrollbars */
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Import the "Mountains of Christmas" font */
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap');
+
+/* Container styling */
+#container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); /* White translucent background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 3; /* Ensure the container is above the snowman and tree */
+}
+
+/* Prompt text styling */
+.prompt-text {
+    color: #ff0000; /* Bright red text */
+    font-size: 1.5rem; /* Larger font size */
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Mountains of Christmas', cursive !important; /* Forcefully apply the font */
+    display: block;
+}
+
+/* Button styling */
+button {
+    padding: 12px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff6600;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #cc5200;
+}
+
+/* Falling circles */
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh); /* Start far above the viewport */
+    }
+    100% {
+        transform: translateY(100vh); /* End below the viewport */
+    }
+}
+
+.circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    animation: fall 5s linear infinite;
+    opacity: 0.8;
+}
+
+.circle:nth-child(even) {
+    width: 15px;
+    height: 15px;
+    animation-duration: 6s;
+}
+
+/* Snowy base */
+#snow {
+    position: absolute;
+    bottom: 0;
+    width: 100%; /* Full width of the screen */
+    height: 100px; /* Height of the snowy base */
+    background-color: white; /* White color for snow */
+    z-index: 1; /* Ensures it is below other content */
+}
+
+/* Merry Christmas message */
+#greeting {
+    color: red; /* Red text */
+    font-size: 2.5rem; /* Larger font */
+    font-weight: bold;
+    font-family: 'Mountains of Christmas', cursive !important; /* Forcefully apply the font */
+    display: block;
+    margin-top: 20px;
+}
+
+/* Link styling */
+#moreLink {
+    display: block;
+    margin-top: 5px; /* Reduced space between greeting and link */
+    color: red; /* Color for the link */
+    text-decoration: underline;
+    font-size: 1.2rem;
+}
+
+#moreLink:hover {
+    text-decoration: underline;
+}
